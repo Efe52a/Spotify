@@ -59,7 +59,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
         ),
       ),
 
-      
       body: Column(
         children: [
           //  Yukarıda seçilen sayfanın içeriğini gösteren dinamik alandır
@@ -562,4 +561,3 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 }
-//BU UYGULAMA MOBİL PROGRALAMA DERSİ KAPSAMINDA GELİŞTİRİLMİŞTİR.

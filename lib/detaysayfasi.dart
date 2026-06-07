@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-
 class DetaySayfasi extends StatefulWidget {
   final String sanatciAdi;
   final String gorselUrl;
 
-  
   DetaySayfasi(String ad, String resim)
       : sanatciAdi = ad,
         gorselUrl = resim;
@@ -145,7 +143,6 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
     );
   }
 
-  
   Widget _sarkiSatiri(String sira, String baslik, String sure) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),

@@ -562,3 +562,4 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 }
+//BU UYGULAMA MOBİL PROGRALAMA DERSİ KAPSAMINDA GELİŞTİRİLMİŞTİR.

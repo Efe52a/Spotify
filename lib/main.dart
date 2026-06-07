@@ -178,7 +178,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
           ),
         ),
 
-        // Sık Dinlenenler Grid Alanıdır
+        // Sık Dinlenenler  Alanıdır
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: GridView.count(

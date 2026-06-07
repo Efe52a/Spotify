@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Spotify Klonu',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF121212),
+        scaffoldBackgroundColor: const Color(0xFF121212), // Koyu arka plan rengidir
         primaryColor: Colors.green,
       ),
       home: const AnaSayfa(),
@@ -30,16 +30,16 @@ class AnaSayfa extends StatefulWidget {
 }
 
 class _AnaSayfaState extends State<AnaSayfa> {
-  // Aktif sayfayı takip etmek için kullandığımız koddur
+  // Aktif sayfayı takip etmek için kullandığımız 0 ve 1 kodlarıdır
   int aktifSayfa = 0;
 
-  //  (0: çalmıyor 1: çalıyor) anlamına gelior
+  // (0: çalmıyor  1: çalıyor) anlamına gelyor
   int sarkiCaliyor = 0; 
   String aktifSarkiAdi = "Dilsiz Sırdaşım";
   String aktifSanatci = "Yüzyüzeyken Konuşuruz";
   String aktifResim = "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=150&q=80";
 
-  // Arama çubuğuna yazılan metni tutan değişkendir
+  // Arama çubuğuna yazılan metin kodudur
   String aramaMetni = "";
 
   @override
@@ -52,13 +52,14 @@ class _AnaSayfaState extends State<AnaSayfa> {
         title: const Text(
           "Spotify",
           style: TextStyle(
-            color: Colors.green, // İkonik Spotify Yeşili başlığıdır
+            color: Colors.green, //  Spotify Yeşil başlığıdır
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
         ),
       ),
 
+      
       body: Column(
         children: [
           //  Yukarıda seçilen sayfanın içeriğini gösteren dinamik alandır
@@ -66,7 +67,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
             child: _sayfaIceriginiGetir(),
           ),
 
-          //  Ekranın altında her zaman sabit duran Mini Çalar  Alanıdır
+          //  Ekranın altında her zaman sabit duran Mini Çalar kodudur
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             padding: const EdgeInsets.all(10),
@@ -82,7 +83,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                   backgroundImage: NetworkImage(aktifResim),
                 ),
                 const SizedBox(width: 12),
-                // Şarkı ve Sanatçı İsmi Alanıdır 
+                // Şarkı ve Sanatçı İsmidir
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +107,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                     ],
                   ),
                 ),
-                // Oynat / Durdur Butonudur
+                // Oynat / Durdur Butonudur 
                 IconButton(
                   icon: Icon(
                     sarkiCaliyor == 1 ? Icons.pause_circle_filled : Icons.play_circle_filled,
@@ -114,7 +115,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                     size: 32,
                   ),
                   onPressed: () {
-                    // Butona basıldığında çalma durumunu değiştirir ve ekranı günceller
+                    // Butona basıldığında çalma durumunu değiştirir ve ekranı güncelleyen koddur
                     setState(() {
                       if (sarkiCaliyor == 0) {
                         sarkiCaliyor = 1;
@@ -237,7 +238,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 
-  // ARAMA SAYFASI İÇERİĞİ 
+  //  ARAMA SAYFASI İÇERİĞİ
   Widget _araSayfasiIcerigi() {
     return ListView(
       children: [
@@ -286,7 +287,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 
-  // KİTAPLIĞIM SAYFASI İÇERİĞİ 
+  //  KİTAPLIĞIM SAYFASI İÇERİĞİ 
   Widget _kitapligimSayfasiIcerigi() {
     return ListView(
       children: [
@@ -298,12 +299,12 @@ class _AnaSayfaState extends State<AnaSayfa> {
           ),
         ),
 
-        //  Beğenilen Şarkılar Bölümüdür
+        //  Beğenilen Şarkılar Bölümü
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: GestureDetector(
             onTap: () {
-              // Tıklanınca Beğenilen Şarkılar detay sayfasını açması içindir
+              // Tıklanınca Beğenilen Şarkılar detay sayfasını açar
               Navigator.push(
                 context, 
                 MaterialPageRoute(
@@ -322,7 +323,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
               ),
               child: Row(
                 children: [
-                  // Yeşil zemin üzerine beyaz kalp ikonudur
+                  // Yeşil zemin üzerine beyaz kalp ikonu kodu
                   Container(
                     width: 50,
                     height: 50,
@@ -333,7 +334,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                     child: const Icon(Icons.favorite, color: Colors.white, size: 28),
                   ),
                   const SizedBox(width: 15),
-                  // Metin Alanlarıdır
+                  // Metin Alanları
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -356,12 +357,12 @@ class _AnaSayfaState extends State<AnaSayfa> {
           ),
         ),
 
-        // Favori Sanatçılar Bölümüdür
+        // Favori Sanatçılar Bölümü 
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: GestureDetector(
             onTap: () {
-              // Tıklanınca Favori Sanatçılar detay sayfasını açmasını sağlar
+              // Tıklanınca Favori Sanatçılar detay sayfasını açan koddur
               Navigator.push(
                 context, 
                 MaterialPageRoute(
@@ -423,14 +424,14 @@ class _AnaSayfaState extends State<AnaSayfa> {
           ),
         ),
 
-        // Alt kısımdaki güncel şarkı listesi elemanlarıdır
+        // Alt kısımdaki güncel şarkı listesi elemanları
         _kitaplikSarkiSatiri("Dilsiz Sırdaşım", "Yüzyüzeyken Konuşuruz"),
         _kitaplikSarkiSatiri("Seni Dert Etmeler", "Madrigal"),
       ],
     );
   }
 
-  // Fotoğrafları karenin içine tam sığdıran Sık Dinlenenler kod Tasarımıdır
+  //  Sık Dinlenenler Satır Tasarımıdır
   Widget _hizliErisimKarti(String baslik, String resimUrl) {
     return GestureDetector(
       onTap: () {
@@ -466,7 +467,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 
-  // Fotoğraf taşmasını engelleyen Albüm Kartı tasarımıdır
+  //  Albüm Kartı tasarımıdır
   Widget _albumSecenekKarti(String baslik, String aciklama, String resimUrl) {
     return GestureDetector(
       onTap: () {
@@ -521,7 +522,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 
-  // Kitaplık Şarkı Satırıdır
+  // Kitaplık Şarkı Satırı (Tıklanabilir Yapıldı!)
   Widget _kitaplikSarkiSatiri(String sarkiAdi, String sanatci) {
     return GestureDetector(
       onTap: () {

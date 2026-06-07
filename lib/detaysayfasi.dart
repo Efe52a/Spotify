@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-// detay sayfasıdır
+
 class DetaySayfasi extends StatefulWidget {
   final String sanatciAdi;
   final String gorselUrl;
 
-
+  
   DetaySayfasi(String ad, String resim)
       : sanatciAdi = ad,
         gorselUrl = resim;
@@ -15,7 +15,7 @@ class DetaySayfasi extends StatefulWidget {
 }
 
 class _DetaySayfasiState extends State<DetaySayfasi> {
-  // Durum kontrol değişkenleri (0: Pasif, 1: Aktif)
+  // Durum kontrol değişkenleri (0: Pasif  1: Aktif) kodudur
   int begenildi = 0; 
   int caliniyor = 0; 
 
@@ -26,6 +26,25 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF191919),
         elevation: 0,
+        // Ok tuşunu belirginleştirmek için sol tarafa özel bir leading ekledim
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0), // Dışarıdan hafif boşluk verdim
+          child: CircleAvatar(
+            backgroundColor: const Color(0xFF282828), // Belirgin olması için arkasına koyu gri yuvarlak koydum
+            child: IconButton(
+              padding: const EdgeInsets.all(0), // İkonun tam ortalanması için paddingi sıfırladım
+              icon: const Icon(
+                Icons.arrow_back, 
+                color: Colors.white, // Bembeyaz ve net durmasını sağladım
+                size: 20,
+              ),
+              onPressed: () {
+                // Bir önceki sayfaya güvenle dönmek için Navigator.pop kullandım
+                Navigator.pop(context);
+              },
+            ),
+          ),
+        ),
         title: Text(
           widget.sanatciAdi, // Ana sayfadan gelen ismi buraya yazdırdım
           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -114,7 +133,7 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
           const SizedBox(height: 20),
           const Divider(color: Colors.grey),
 
-          // Alt kısımdaki statik şarkı satırları listesidir
+          // Alt kısımdaki statik şarkı satırları listesi
           _sarkiSatiri("1", "Dilsiz Sırdaşım", "3:42"),
           _sarkiSatiri("2", "Bodrum", "4:15"),
           _sarkiSatiri("3", "Kazılı Kuyum", "3:50"),
@@ -126,7 +145,7 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
     );
   }
 
-  // Temel widget'larla (Row, Column) sıfırdan yazdığımız esnek şarkı satırı fonksiyonudur
+  
   Widget _sarkiSatiri(String sira, String baslik, String sure) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),

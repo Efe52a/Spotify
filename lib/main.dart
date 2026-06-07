@@ -526,7 +526,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
   Widget _kitaplikSarkiSatiri(String sarkiAdi, String sanatci) {
     return GestureDetector(
       onTap: () {
-        // Şarkı satırına tıklanınca sanatçının detay sayfasına girmesini sağladık
+        // Şarkı satırına tıklanınca sanatçının detay sayfasına girmesini sağladım
         Navigator.push(
           context, 
           MaterialPageRoute(

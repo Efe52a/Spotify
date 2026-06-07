@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-// Veri alan ve durum barındıran detay sayfası yapısı
+// detay sayfasıdır
 class DetaySayfasi extends StatefulWidget {
   final String sanatciAdi;
   final String gorselUrl;
 
-  // Başlatıcı liste yardımıyla 'this' kullanmadan parametre eşleme kurucusu
+
   DetaySayfasi(String ad, String resim)
       : sanatciAdi = ad,
         gorselUrl = resim;

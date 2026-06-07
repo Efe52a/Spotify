@@ -39,8 +39,11 @@ Divider
 ## Uygulama Ekran Görüntüleri
 
 https://prnt.sc/c9hEIVZR5Eca
+
 https://prnt.sc/5hLsiuEm1AmS
+
 https://prnt.sc/S3UXbIliT2u6
+
 https://prnt.sc/cXGI70ZXolyg
 
 

@@ -522,7 +522,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 
-  // Kitaplık Şarkı Satırı (Tıklanabilir Yapıldı!)
+  // Kitaplık Şarkı Satırıdır
   Widget _kitaplikSarkiSatiri(String sarkiAdi, String sanatci) {
     return GestureDetector(
       onTap: () {
